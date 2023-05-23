@@ -1,5 +1,5 @@
 function changeBackgroundColorOnLoad() {
-  const sections = document.querySelectorAll('[id^="section-bg-"]');
+  const sections = document.querySelectorAll('[id^="kwd-section-"]');
   const body = document.body;
 
   const observerOptions = {
