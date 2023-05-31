@@ -36,10 +36,24 @@ function removeInvisibleElements() {
     });
 }
 
+function addCurrentClassToChildren() {
+  const currentElements = document.querySelectorAll('.w--current');
+  
+  currentElements.forEach(element => {
+    const children = element.children;
+    
+    for (let i = 0; i < children.length; i++) {
+      children[i].classList.add('w--current');
+    }
+  });
+}
+
+
 $(document).ready(function () {
     const functions = [
       setupShareLinks, 
-      removeInvisibleElements
+      removeInvisibleElements,
+      addCurrentClassToChildren
     ];
     const promises = functions.map(func => func());
 
