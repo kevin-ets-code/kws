@@ -23,7 +23,6 @@ function setupShareLinks() {
         resolve();
     });
 }
-
 function removeInvisibleElements() {
     return new Promise(function(resolve, reject) {
         var elementsToRemove = document.querySelectorAll('.w-condition-invisible');
@@ -35,7 +34,6 @@ function removeInvisibleElements() {
         resolve();
     });
 }
-
 function replaceWithButton() {
   var elements = document.querySelectorAll('.is-button');
 
@@ -47,8 +45,6 @@ function replaceWithButton() {
     element.replaceWith(button);
   });
 }
-
-
 $(document).ready(function () {
     const functions = [
       setupShareLinks, 
