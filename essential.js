@@ -36,11 +36,15 @@ function removeInvisibleElements() {
     });
 }
 
-function addRoleToButtons() {
-  var elements = document.querySelectorAll('[class*="is-button"]');
-  
+function replaceWithButton() {
+  var elements = document.querySelectorAll('.is-button');
+
   elements.forEach(function(element) {
-    element.setAttribute("role", "button");
+    var button = document.createElement('button');
+    button.innerHTML = element.innerHTML;
+    button.className = element.className;
+    button.type = 'button';
+    element.replaceWith(button);
   });
 }
 
@@ -49,7 +53,7 @@ $(document).ready(function () {
     const functions = [
       setupShareLinks, 
       removeInvisibleElements,
-      addRoleToButtons
+      replaceWithButton
     ];
     const promises = functions.map(func => func());
 
