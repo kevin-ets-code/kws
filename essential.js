@@ -36,15 +36,11 @@ function removeInvisibleElements() {
     });
 }
 
-function addCurrentClassToChildren() {
-  const currentElements = document.querySelectorAll('.w--current');
+function addRoleToButtons() {
+  var elements = document.querySelectorAll('[class*="button"]');
   
-  currentElements.forEach(element => {
-    const children = element.children;
-    
-    for (let i = 0; i < children.length; i++) {
-      children[i].classList.add('w--current');
-    }
+  elements.forEach(function(element) {
+    element.setAttribute("role", "button");
   });
 }
 
@@ -53,7 +49,7 @@ $(document).ready(function () {
     const functions = [
       setupShareLinks, 
       removeInvisibleElements,
-      addCurrentClassToChildren
+      addRoleToButtons
     ];
     const promises = functions.map(func => func());
 
