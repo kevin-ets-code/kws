@@ -37,7 +37,7 @@ function removeInvisibleElements() {
 }
 
 function addRoleToButtons() {
-  var elements = document.querySelectorAll('[class*="button"]');
+  var elements = document.querySelectorAll('[class*="is-button"]');
   
   elements.forEach(function(element) {
     element.setAttribute("role", "button");
