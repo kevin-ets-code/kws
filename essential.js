@@ -45,11 +45,44 @@ function replaceWithButton() {
     element.replaceWith(button);
   });
 }
+function addBreadcrumbLDScript() {
+  var breadcrumbList = document.querySelector(".breadcrumb-list");
+  if (breadcrumbList) {
+    var breadcrumbData = {
+      "@context": "https://schema.org/",
+      "@type": "BreadcrumbList",
+      "itemListElement": []
+    };
+    var breadcrumbItems = breadcrumbList.querySelectorAll(".breadcrumb-item");
+    breadcrumbItems.forEach(function(item, index) {
+      var breadcrumbName = item.getAttribute("breadcrumb-name");
+      var breadcrumbLink = item.getAttribute("href");
+      if (breadcrumbLink.startsWith("/")) {
+        var domainURL = window.location.origin;
+        breadcrumbLink = domainURL + breadcrumbLink;
+      }
+      var listItem = {
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": breadcrumbName,
+        "item": breadcrumbLink
+      };
+      breadcrumbData.itemListElement.push(listItem);
+    });
+    var formattedJSONLD = JSON.stringify(breadcrumbData, null, 2);
+    var scriptTag = document.createElement("script");
+    scriptTag.type = "application/ld+json";
+    scriptTag.innerHTML = formattedJSONLD;
+    document.head.appendChild(scriptTag);
+  }
+}
+
 $(document).ready(function () {
     const functions = [
       setupShareLinks, 
       removeInvisibleElements,
-      replaceWithButton
+      replaceWithButton,
+      addBreadcrumbLDScript
     ];
     const promises = functions.map(func => func());
 
