@@ -9,3 +9,4 @@ function replaceWithButton() {
     element.replaceWith(button);
   });
 }
+document.addEventListener('DOMContentLoaded', replaceWithButton);
