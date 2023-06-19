@@ -1,4 +1,4 @@
-function replaceWithButton() {
+document.addEventListener("DOMContentLoaded", function() {
   var elements = document.querySelectorAll('.is-button');
 
   elements.forEach(function(element) {
@@ -9,4 +9,4 @@ function replaceWithButton() {
     element.replaceWith(button);
   });
 }
-document.addEventListener('DOMContentLoaded', replaceWithButton);
+}
