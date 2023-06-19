@@ -8,5 +8,4 @@ document.addEventListener("DOMContentLoaded", function() {
     button.type = 'button';
     element.replaceWith(button);
   });
-}
-}
+});
