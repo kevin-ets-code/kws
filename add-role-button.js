@@ -5,3 +5,4 @@ function replaceWithButton() {
     element.setAttribute('role', 'button');
   });
 }
+document.addEventListener('DOMContentLoaded', replaceWithButton);
