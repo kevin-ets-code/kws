@@ -42,9 +42,17 @@ function replaceWithButton() {
     button.innerHTML = element.innerHTML;
     button.className = element.className;
     button.type = 'button';
+
+    var attributes = element.attributes;
+    for (var i = 0; i < attributes.length; i++) {
+      var attr = attributes[i];
+      button.setAttribute(attr.name, attr.value);
+    }
+
     element.replaceWith(button);
   });
 }
+
 function addBreadcrumbLDScript() {
   var breadcrumbList = document.querySelector(".breadcrumb-list");
   if (breadcrumbList) {
