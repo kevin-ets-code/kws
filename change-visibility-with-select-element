@@ -1,7 +1,7 @@
 var Webflow = Webflow || [];
 Webflow.push(function() {
 const selectElement = document.querySelector('#selectElement');
-const elements = document.querySelectorAll('[value]');
+const elements = document.querySelectorAll('[select]');
 function handleChange() {
   const selectedValue = selectElement.value;
   elements.forEach(element => {
