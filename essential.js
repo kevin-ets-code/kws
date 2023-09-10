@@ -85,7 +85,8 @@ function addBreadcrumbLDScript() {
   }
 }
 
-$(document).ready(function () {
+var Webflow = Webflow || [];
+Webflow.push(function() {
     const functions = [
       setupShareLinks, 
       removeInvisibleElements,
