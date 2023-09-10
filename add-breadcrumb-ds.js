@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", function() {
+var Webflow = Webflow || [];
+Webflow.push(function() {
 // Recherche de l'élément avec la classe "breadcrumb-list"
   var breadcrumbList = document.querySelector(".breadcrumb-list");
 
