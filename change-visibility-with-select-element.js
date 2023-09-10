@@ -5,7 +5,7 @@ const elements = document.querySelectorAll('[select]');
 function handleChange() {
   const selectedValue = selectElement.value;
   elements.forEach(element => {
-    const elementValue = element.getAttribute('value');
+    const elementValue = this.getAttribute('value');
     if (elementValue === selectedValue) {
       element.style.display = 'block';
     } else {
