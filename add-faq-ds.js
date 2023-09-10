@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", function() {
+var Webflow = Webflow || [];
+Webflow.push(function() { {
 // Recherche de l'élément avec la classe "w-faq"
   var wrapperFaq = document.querySelector(".faq-list");
 
